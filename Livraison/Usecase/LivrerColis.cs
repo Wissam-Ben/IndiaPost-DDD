@@ -1,6 +1,6 @@
 namespace Livraison.Usecase;
 
-public class LiverColis
+public sealed class LiverColis
 {
 
 }

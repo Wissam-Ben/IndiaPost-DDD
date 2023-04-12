@@ -1,6 +1,6 @@
 namespace Livraison.Usecase;
 
-public class AssignerLotLivraison
+public sealed class AssignerLotLivraison
 {
 
 }
