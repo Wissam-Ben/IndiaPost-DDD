@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Livraison", "Livraison\Livraison.csproj", "{DF76A5F4-3518-4C5B-9D94-83AE98CB3218}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Livraison.Tests", "Livraison.Tests\Livraison.Tests.csproj", "{FDA4776F-F341-4A07-B559-3E27600B7497}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DF76A5F4-3518-4C5B-9D94-83AE98CB3218}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF76A5F4-3518-4C5B-9D94-83AE98CB3218}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF76A5F4-3518-4C5B-9D94-83AE98CB3218}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF76A5F4-3518-4C5B-9D94-83AE98CB3218}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDA4776F-F341-4A07-B559-3E27600B7497}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDA4776F-F341-4A07-B559-3E27600B7497}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDA4776F-F341-4A07-B559-3E27600B7497}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDA4776F-F341-4A07-B559-3E27600B7497}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
