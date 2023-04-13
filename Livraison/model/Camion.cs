@@ -19,6 +19,11 @@ public class Camion
 
 	public void AssignerChauffeur(Chauffeur chauffeur)
 	{
+		if (Chauffeur is not null)
+		{
+			throw new CamionDejaAssigne("Le camion a déjà un chauffeur assigné.");
+		}
+
 		EstDisponible = false;
 		Chauffeur = chauffeur;
 	}

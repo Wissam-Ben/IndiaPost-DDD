@@ -4,24 +4,23 @@ using Livraison.Usecase;
 
 public class AssignerLotLivraisonTest
 {
-	[Fact]
-	public void assignerTest()
-	{
-		List<Colis> colis = new List<Colis>
+	private LotLivraison _lot = new LotLivraison("Île de France", new List<Colis>
 		{
 			new Colis("colis1", 1, "242 Rue Faubourd Saint-Antoine"),
 			new Colis("colis2", 5, "242 Rue FaubourdSaint-Antoine")
-		};
-		LotLivraison lotLivraison = new LotLivraison("Île de France", colis);
+		}, (8, 17));
 
+	[Fact]
+	public void assignerTest()
+	{
 		Chauffeurs chauffeurs = new FauxChauffeurs();
 		Camions camions = new FauxCamions();
 
 		AssignerLotLivraison assignement = new AssignerLotLivraison(camions, chauffeurs);
-		Camion camionAssigne = assignement.assigner(lotLivraison);
+		Camion camionAssigne = assignement.assigner(_lot);
 
 		Assert.False(camionAssigne.EstDisponible);
 		Assert.NotNull(camionAssigne.Chauffeur);
-		Assert.Equal(lotLivraison.Secteur, camionAssigne.Secteur);
+		Assert.Equal(_lot.Secteur, camionAssigne.Secteur);
 	}
 }

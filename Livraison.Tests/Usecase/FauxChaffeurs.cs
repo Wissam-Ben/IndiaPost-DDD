@@ -5,7 +5,7 @@ public class FauxChauffeurs : Chauffeurs
 {
 	Chauffeur? Chauffeurs.TrouverParSecteur(string secteur)
 	{
-		return new Chauffeur(secteur);
+		return new Chauffeur(secteur, (0, 24));
 	}
 
 }

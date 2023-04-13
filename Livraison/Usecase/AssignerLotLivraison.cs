@@ -13,11 +13,12 @@ public sealed class AssignerLotLivraison
 	public Camion assigner(LotLivraison lotLivraison)
 	{
 		Camion camion = _camions.TrouverParSecteur(lotLivraison.Secteur)
-			?? throw new NullReferenceException("Camion introuvable.");
+			?? throw new CamionNonTrouve();
 
 		Chauffeur chauffeur = _chauffeurs.TrouverParSecteur(lotLivraison.Secteur)
-		 ?? throw new NullReferenceException("Chauffeur introuvable.");
+		 ?? throw new ChauffeurNonTrouve();
 
+		chauffeur.AssignerLivraison(lotLivraison);
 		camion.AssignerChauffeur(chauffeur);
 		camion.ChargerLot(lotLivraison);
 
