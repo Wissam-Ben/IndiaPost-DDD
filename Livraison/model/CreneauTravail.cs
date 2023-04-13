@@ -10,16 +10,18 @@ public record CreneauTravail
 
 	public CreneauTravail(int debut, int fin)
 	{
-		if (CreneauTravail.TEMPS_TRAVAIL_MAX < Math.Abs(fin - debut))
+		(Debut, Fin) = fin <= debut ? (fin, debut) : (debut, fin);
+
+		if (CreneauTravail.TEMPS_TRAVAIL_MAX < NombreHeures)
 		{
 			throw new SurexploitationDuChauffeur();
 		}
 
-		(Debut, Fin) = fin <= debut ? (fin, debut) : (debut, fin);
-
 		if (Debut < CreneauTravail.HEURE_DEBUT_MIN || CreneauTravail.HEURE_FIN_MAX < Fin)
 		{
-			throw new HorairesTravailInvalides(CreneauTravail.HEURE_DEBUT_MIN, CreneauTravail.HEURE_FIN_MAX);
+			throw new HoraireTravailInvalide(CreneauTravail.HEURE_DEBUT_MIN, CreneauTravail.HEURE_FIN_MAX);
 		}
 	}
+
+	public int NombreHeures => Fin - Debut;
 }

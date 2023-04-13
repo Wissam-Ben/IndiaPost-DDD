@@ -2,7 +2,6 @@ namespace Livraison.Model;
 
 public class Chauffeur
 {
-	private static readonly int TEMPS_TRAVAIL_MAX = 8;
 	public string ChauffeurID { get; init; }
 
 	public bool EstDisponible { get; set; }
@@ -16,12 +15,16 @@ public class Chauffeur
 
 	public void AssignerLivraison(LotLivraison lotLivraison)
 	{
-		if (lotLivraison.PlageLivraison.Debut < HorairesTravail.Debut ||
-			HorairesTravail.Fin < lotLivraison.PlageLivraison.Fin)
+		if (NePeutPasAccepterHoraireLivraison(lotLivraison.Horaires))
 		{
 			throw new PlageDeLivraisonNonDisponible("Plage de livraison non compatible avec celle du chauffeur.");
 		}
 
 		EstDisponible = false;
+	}
+
+	private bool NePeutPasAccepterHoraireLivraison(HoraireLivraison horaire)
+	{
+		return horaire.Debut < HorairesTravail.Debut || HorairesTravail.Fin < horaire.Fin;
 	}
 }

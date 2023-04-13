@@ -6,7 +6,6 @@ public class Camion
 	public bool EstDisponible { get; private set; }
 	public string Secteur { get; private set; }
 	public Chauffeur? Chauffeur { get; private set; }
-
 	public LotLivraison LotLivraison { get; private set; }
 
 	public Camion(string camionId, bool estDisponible, string secteur)

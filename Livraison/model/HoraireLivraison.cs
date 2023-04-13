@@ -8,11 +8,12 @@ public record HoraireLivraison
 
 	public HoraireLivraison(int debut, int fin)
 	{
-		if (DUREE_LIVRAISON_MAX < Math.Abs(fin - debut))
+		(Debut, Fin) = fin <= debut ? (fin, debut) : (debut, fin);
+
+		if (DUREE_LIVRAISON_MAX < NombreHeures)
 		{
 			throw new HoraireLivraisonInvalide(DUREE_LIVRAISON_MAX);
 		}
-		(Debut, Fin) = fin <= debut ? (fin, debut) : (debut, fin);
 	}
 
 	public int NombreHeures => Fin - Debut;
