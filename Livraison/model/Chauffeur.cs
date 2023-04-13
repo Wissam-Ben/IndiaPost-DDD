@@ -7,21 +7,17 @@ public class Chauffeur
 
 	public bool EstDisponible { get; set; }
 
-	public CreneauHoraire PlageDisponibilite { get; init; }
+	public CreneauTravail HorairesTravail { get; init; }
 
-	public Chauffeur(string chauffeurID, CreneauHoraire plageDisponibilite)
+	public Chauffeur(string chauffeurID, CreneauTravail horairesTravail)
 	{
-		if (Chauffeur.TEMPS_TRAVAIL_MAX < plageDisponibilite.NombreHeures)
-		{
-			throw new SurexploitationDuChauffeur();
-		}
-		(ChauffeurID, PlageDisponibilite) = (chauffeurID, plageDisponibilite);
+		(ChauffeurID, HorairesTravail) = (chauffeurID, horairesTravail);
 	}
 
 	public void AssignerLivraison(LotLivraison lotLivraison)
 	{
-		if (lotLivraison.PlageLivraison.Debut < PlageDisponibilite.Debut ||
-			PlageDisponibilite.Fin < lotLivraison.PlageLivraison.Fin)
+		if (lotLivraison.PlageLivraison.Debut < HorairesTravail.Debut ||
+			HorairesTravail.Fin < lotLivraison.PlageLivraison.Fin)
 		{
 			throw new PlageDeLivraisonNonDisponible("Plage de livraison non compatible avec celle du chauffeur.");
 		}

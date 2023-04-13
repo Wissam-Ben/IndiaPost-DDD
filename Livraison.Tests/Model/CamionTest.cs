@@ -8,7 +8,7 @@ public class CamionTest
 	[Fact]
 	public void AssignerChauffeurEchoueSiDejaAssigne()
 	{
-		_camion.AssignerChauffeur(new Chauffeur("1", new CreneauHoraire(9, 16)));
-		Assert.Throws<CamionDejaAssigne>(() => _camion.AssignerChauffeur(new Chauffeur("2", new CreneauHoraire(9, 16))));
+		_camion.AssignerChauffeur(new Chauffeur("1", new CreneauTravail(9, 16)));
+		Assert.Throws<CamionDejaAssigne>(() => _camion.AssignerChauffeur(new Chauffeur("2", new CreneauTravail(9, 16))));
 	}
 }
