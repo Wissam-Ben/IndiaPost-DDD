@@ -2,9 +2,9 @@ namespace Livraison.Model;
 
 public class Colis
 {
-	public string ProduitID;
-	public int Quantite;
-	public string Adresse;
+	public string ProduitID { get; init; }
+	public int Quantite { get; init; }
+	public string Adresse { get; init; }
 
 	public Colis(string produitID, int quantite, string adresse)
 	{

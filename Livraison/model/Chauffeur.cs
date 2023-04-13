@@ -2,7 +2,7 @@ namespace Livraison.Model;
 
 public class Chauffeur
 {
-	public string ChauffeurID;
+	public string ChauffeurID { get; init; }
 
 	public Chauffeur(string chauffeurID)
 	{

@@ -2,10 +2,10 @@ namespace Livraison.Model;
 
 public class Camion
 {
-	public string CamionID;
-	public bool EstDisponible;
-	public string Secteur;
-	public Chauffeur? Chauffeur;
+	public string CamionID { get; init; }
+	public bool EstDisponible { get; private set; }
+	public string Secteur { get; private set; }
+	public Chauffeur? Chauffeur { get; private set; }
 
 	public LotLivraison LotLivraison { get; private set; }
 
