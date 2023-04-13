@@ -5,13 +5,6 @@ using Livraison.Usecase;
 public class AssignerLotLivraisonTest
 {
 	[Fact]
-	public void Test1()
-	{
-		// except 1 to be true 
-		Assert.True(true);
-	}
-
-	[Fact]
 	public void assignerTest()
 	{
 		List<Colis> colis = new List<Colis>
