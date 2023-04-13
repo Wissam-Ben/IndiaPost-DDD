@@ -19,7 +19,7 @@ public record CreneauTravail
 
 		if (Debut < CreneauTravail.HEURE_DEBUT_MIN || CreneauTravail.HEURE_FIN_MAX < Fin)
 		{
-			throw new ArgumentOutOfRangeException("Le créneau de travail doit être compris entre 6h et 21h inclus.");
+			throw new HorairesTravailInvalides(CreneauTravail.HEURE_DEBUT_MIN, CreneauTravail.HEURE_FIN_MAX);
 		}
 	}
 }

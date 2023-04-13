@@ -5,9 +5,9 @@ public record LotLivraison
 	public string Secteur { get; init; }
 	public List<Colis> Colis { get; init; }
 
-	public CreneauHoraire PlageLivraison { get; init; }
+	public HoraireLivraison PlageLivraison { get; init; }
 
-	public LotLivraison(string secteur, List<Colis> colis, CreneauHoraire plageLivraison)
+	public LotLivraison(string secteur, List<Colis> colis, HoraireLivraison plageLivraison)
 	{
 		Secteur = secteur;
 		Colis = colis;
@@ -16,6 +16,6 @@ public record LotLivraison
 
 	public static LotLivraison Vide(string secteur)
 	{
-		return new LotLivraison(secteur, new List<Colis>(), new CreneauHoraire(0, 0));
+		return new LotLivraison(secteur, new List<Colis>(), new HoraireLivraison(0, 0));
 	}
 }
