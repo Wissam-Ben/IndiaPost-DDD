@@ -8,7 +8,7 @@ public class AssignerLotLivraisonTest
 		{
 			new Colis("colis1", 1, "242 Rue Faubourd Saint-Antoine"),
 			new Colis("colis2", 5, "242 Rue FaubourdSaint-Antoine")
-		}, (8, 17));
+		}, new CreneauHoraire(8, 17));
 
 	[Fact]
 	public void assignerTest()

@@ -1,6 +1,7 @@
+using System;
 namespace Livraison.Model;
 
-public class Colis
+public record Colis
 {
 	public string ProduitID { get; init; }
 	public int Quantite { get; init; }
@@ -12,5 +13,4 @@ public class Colis
 		Quantite = quantite;
 		Adresse = adresse;
 	}
-
 }

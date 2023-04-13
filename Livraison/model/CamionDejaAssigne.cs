@@ -2,7 +2,7 @@ namespace Livraison.Model;
 
 public class CamionDejaAssigne : ArgumentException
 {
-	public CamionDejaAssigne(string message) : base(message)
+	public CamionDejaAssigne() : base("Le camion a déjà un chauffeur assigné.")
 	{
 
 	}
