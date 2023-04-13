@@ -22,6 +22,7 @@ public sealed class AssignerLotLivraison
 		camion.AssignerChauffeur(chauffeur);
 		camion.ChargerLot(lotLivraison);
 
+		_chauffeurs.Sauvegarder(chauffeur);
 		_camions.Sauvegarder(camion);
 		return camion;
 	}

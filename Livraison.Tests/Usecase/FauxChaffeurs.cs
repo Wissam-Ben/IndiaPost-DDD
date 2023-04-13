@@ -8,4 +8,8 @@ public class FauxChauffeurs : Chauffeurs
 		return new Chauffeur(secteur, new CreneauTravail(10, 18));
 	}
 
+	void Chauffeurs.Sauvegarder(Chauffeur chauffeur)
+	{
+
+	}
 }
