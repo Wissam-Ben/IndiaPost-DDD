@@ -2,6 +2,7 @@ namespace Livraison.Model;
 
 public class Chauffeur
 {
+	private static readonly int TEMPS_TRAVAIL_MAX = 8;
 	public string ChauffeurID { get; init; }
 
 	public bool EstDisponible { get; set; }
@@ -10,6 +11,10 @@ public class Chauffeur
 
 	public Chauffeur(string chauffeurID, CreneauHoraire plageDisponibilite)
 	{
+		if (Chauffeur.TEMPS_TRAVAIL_MAX < plageDisponibilite.NombreHeures)
+		{
+			throw new SurexploitationDuChauffeur();
+		}
 		(ChauffeurID, PlageDisponibilite) = (chauffeurID, plageDisponibilite);
 	}
 

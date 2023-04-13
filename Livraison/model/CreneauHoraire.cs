@@ -9,4 +9,6 @@ public record CreneauHoraire
 	{
 		(Debut, Fin) = fin <= debut ? (fin, debut) : (debut, fin);
 	}
+
+	public int NombreHeures => Fin - Debut;
 }
