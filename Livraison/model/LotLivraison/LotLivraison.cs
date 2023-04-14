@@ -15,9 +15,4 @@ public sealed class LotLivraison
 		Colis = colis;
 		Horaires = plageLivraison;
 	}
-
-	public static LotLivraison Vide(string secteur)
-	{
-		return new LotLivraison("0", secteur, new List<Colis>(), new HoraireLivraison(0, 0));
-	}
 }

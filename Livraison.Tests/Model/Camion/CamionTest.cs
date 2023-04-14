@@ -13,4 +13,12 @@ public class CamionTest
 		_camion.AssignerChauffeur(chauffeurID1);
 		Assert.Throws<CamionDejaAssigne>(() => _camion.AssignerChauffeur(chauffeurID2));
 	}
+
+	[Fact]
+	public void ChargerLotDansLeCamion()
+	{
+		var lotID = "1";
+		_camion.ChargerLot(lotID);
+		Assert.Equal(lotID, _camion.LotID);
+	}
 }
