@@ -20,7 +20,7 @@ public class PreparerLotLivraisonTest
 			new ColisDto(_secteur, "242 Rue Faubourg Saint-Antoine", "colis1", 6),
 			new ColisDto(_secteur, "242 Rue Faubourg Saint-Antoine", "colis2", 7)
 		};
-		var dto = new CreerLotLivraisonDto(colis, _secteur, 10, 13);
+		var dto = new RequetePreparerLotLivraison(colis, _secteur, 10, 13);
 		LotsLivraison lotsLivraison = new FauxLotsLivraison();
 		PreparerLotLivraison preparation = new PreparerLotLivraison(lotsLivraison);
 		LotLivraison lot = preparation.Preparer(dto);

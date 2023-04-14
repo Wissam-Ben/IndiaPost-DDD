@@ -12,7 +12,7 @@ public sealed class PreparerLotLivraison
 		_lotsLivraison = lotsLivraison;
 	}
 
-	public LotLivraison Preparer(CreerLotLivraisonDto dto)
+	public LotLivraison Preparer(RequetePreparerLotLivraison dto)
 	{
 		List<Colis> colis = dto.Colis.Select(c =>
 		{
