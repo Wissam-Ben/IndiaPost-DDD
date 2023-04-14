@@ -15,12 +15,14 @@ public class AssignerLotLivraisonTest
 	{
 		Chauffeurs chauffeurs = new FauxChauffeurs();
 		Camions camions = new FauxCamions();
+		LotsLivraison lotsLivraison = new FauxLotsLivraison();
 
-		AssignerLotLivraison assignement = new AssignerLotLivraison(camions, chauffeurs);
-		Camion camionAssigne = assignement.assigner(_lot);
+		AssignerLotLivraison assignement = new AssignerLotLivraison(camions, chauffeurs, lotsLivraison);
+		Camion camionAssigne = assignement.assigner(_lot.LotID);
 
 		Assert.False(camionAssigne.EstDisponible);
 		Assert.NotNull(camionAssigne.ChauffeurID);
 		Assert.Equal(_lot.Secteur, camionAssigne.Secteur);
+		Assert.Equal(_lot.LotID, camionAssigne.LotID);
 	}
 }

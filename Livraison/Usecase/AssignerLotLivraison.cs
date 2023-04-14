@@ -4,21 +4,27 @@ public sealed class AssignerLotLivraison
 {
 	private Camions _camions;
 	private Chauffeurs _chauffeurs;
+	private LotsLivraison _lotsLivraison;
 
-	public AssignerLotLivraison(Camions camions, Chauffeurs chauffeurs)
+	public AssignerLotLivraison(Camions camions, Chauffeurs chauffeurs, LotsLivraison lotsLivraison)
 	{
-		(_camions, _chauffeurs) = (camions, chauffeurs);
+		(_camions, _chauffeurs, _lotsLivraison) = (camions, chauffeurs, lotsLivraison);
 	}
 
-	public Camion assigner(LotLivraison lotLivraison)
+	public Camion assigner(string lotID)
 	{
+		LotLivraison lotLivraison = _lotsLivraison.FindById(lotID)
+			?? throw new LotLivraisonNonTrouve();
+
 		Camion camion = _camions.TrouverParSecteur(lotLivraison.Secteur)
 			?? throw new CamionNonTrouve();
 
 		Chauffeur chauffeur = _chauffeurs.TrouverParSecteur(lotLivraison.Secteur)
 		 ?? throw new ChauffeurNonTrouve();
 
-		chauffeur.AssignerLivraison(lotLivraison);
+		var assignateur = new AssignateurLivraison();
+		assignateur.Assigner(chauffeur, lotLivraison);
+
 		camion.AssignerChauffeur(chauffeur.ChauffeurID);
 		camion.ChargerLot(lotLivraison.LotID);
 

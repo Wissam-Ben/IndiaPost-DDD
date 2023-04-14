@@ -13,13 +13,8 @@ public class Chauffeur
 		(ChauffeurID, HorairesTravail) = (chauffeurID, horairesTravail);
 	}
 
-	public void AssignerLivraison(LotLivraison lotLivraison)
+	public void AssignerLivraison()
 	{
-		if (NePeutPasAccepterHoraireLivraison(lotLivraison.Horaires))
-		{
-			throw new PlageDeLivraisonNonDisponible("Plage de livraison non compatible avec celle du chauffeur.");
-		}
-
 		EstDisponible = false;
 	}
 
