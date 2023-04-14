@@ -4,9 +4,9 @@ public record Colis
 {
 	public string ProduitID { get; init; }
 	public int Quantite { get; init; }
-	public string Adresse { get; init; }
+	public Adresse Adresse { get; init; }
 
-	public Colis(string produitID, int quantite, string adresse)
+	public Colis(string produitID, int quantite, Adresse adresse)
 	{
 		ProduitID = produitID;
 		Quantite = quantite;
