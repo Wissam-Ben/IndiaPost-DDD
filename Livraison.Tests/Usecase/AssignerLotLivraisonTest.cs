@@ -4,7 +4,7 @@ using Livraison.Usecase;
 
 public class AssignerLotLivraisonTest
 {
-	private LotLivraison _lot = new LotLivraison("Île de France", new List<Colis>
+	private LotLivraison _lot = new LotLivraison("1", "Île de France", new List<Colis>
 		{
 			new Colis("colis1", 1, "242 Rue Faubourd Saint-Antoine"),
 			new Colis("colis2", 5, "242 Rue FaubourdSaint-Antoine")

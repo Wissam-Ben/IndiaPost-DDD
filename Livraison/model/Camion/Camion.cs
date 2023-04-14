@@ -6,14 +6,14 @@ public class Camion
 	public bool EstDisponible { get; private set; }
 	public string Secteur { get; private set; }
 	public string? ChauffeurID { get; private set; }
-	public LotLivraison LotLivraison { get; private set; }
+	public string? LotID { get; private set; }
 
 	public Camion(string camionId, bool estDisponible, string secteur)
 	{
 		CamionID = camionId;
 		EstDisponible = estDisponible;
 		Secteur = secteur;
-		LotLivraison = LotLivraison.Vide(secteur);
+		LotID = null;
 	}
 
 	public void AssignerChauffeur(string chauffeurID)
@@ -27,8 +27,8 @@ public class Camion
 		ChauffeurID = chauffeurID;
 	}
 
-	public void ChargerLot(LotLivraison lotLivraison)
+	public void ChargerLot(string lotID)
 	{
-		LotLivraison = lotLivraison;
+		LotID = lotID;
 	}
 }

@@ -2,13 +2,15 @@ namespace Livraison.Model;
 
 public record LotLivraison
 {
+	public string LotID { get; init; }
 	public string Secteur { get; init; }
 	public List<Colis> Colis { get; init; }
 
 	public HoraireLivraison Horaires { get; init; }
 
-	public LotLivraison(string secteur, List<Colis> colis, HoraireLivraison plageLivraison)
+	public LotLivraison(string lotID, string secteur, List<Colis> colis, HoraireLivraison plageLivraison)
 	{
+		LotID = lotID;
 		Secteur = secteur;
 		Colis = colis;
 		Horaires = plageLivraison;
@@ -16,6 +18,6 @@ public record LotLivraison
 
 	public static LotLivraison Vide(string secteur)
 	{
-		return new LotLivraison(secteur, new List<Colis>(), new HoraireLivraison(0, 0));
+		return new LotLivraison("0", secteur, new List<Colis>(), new HoraireLivraison(0, 0));
 	}
 }
