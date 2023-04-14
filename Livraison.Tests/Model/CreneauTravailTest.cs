@@ -1,4 +1,4 @@
-using Livraison.Model;
+using Livraison.Model.ChauffeurAggregate;
 
 namespace Livraison.Tests.Model;
 

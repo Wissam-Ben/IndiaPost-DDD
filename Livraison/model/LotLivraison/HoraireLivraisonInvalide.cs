@@ -1,4 +1,4 @@
-namespace Livraison.Model;
+namespace Livraison.Model.LotLivraisonAggregate;
 
 public class HoraireLivraisonInvalide : ArgumentOutOfRangeException
 {

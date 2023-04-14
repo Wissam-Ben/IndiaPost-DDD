@@ -1,6 +1,6 @@
-namespace Livraison.Model;
+namespace Livraison.Model.CamionAggregate;
 
-public class Camion
+public sealed class Camion
 {
 	public string CamionID { get; init; }
 	public bool EstDisponible { get; private set; }

@@ -1,5 +1,4 @@
-using System;
-namespace Livraison.Model;
+namespace Livraison.Model.LotLivraisonAggregate;
 
 public record Colis
 {

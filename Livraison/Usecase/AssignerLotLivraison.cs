@@ -1,5 +1,10 @@
-namespace Livraison.Usecase;
 using Livraison.Model;
+using Livraison.Model.CamionAggregate;
+using Livraison.Model.ChauffeurAggregate;
+using Livraison.Model.LotLivraisonAggregate;
+
+namespace Livraison.Usecase;
+
 public sealed class AssignerLotLivraison
 {
 	private Camions _camions;

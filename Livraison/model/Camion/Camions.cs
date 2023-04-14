@@ -1,4 +1,4 @@
-namespace Livraison.Model;
+namespace Livraison.Model.CamionAggregate;
 
 public interface Camions
 {

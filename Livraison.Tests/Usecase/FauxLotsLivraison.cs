@@ -1,5 +1,5 @@
 namespace Livraison.Tests.Usecase;
-using Livraison.Model;
+using Livraison.Model.LotLivraisonAggregate;
 
 public class FauxLotsLivraison : LotsLivraison
 {

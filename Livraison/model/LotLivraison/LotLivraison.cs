@@ -1,6 +1,6 @@
-namespace Livraison.Model;
+namespace Livraison.Model.LotLivraisonAggregate;
 
-public record LotLivraison
+public sealed class LotLivraison
 {
 	public string LotID { get; init; }
 	public string Secteur { get; init; }

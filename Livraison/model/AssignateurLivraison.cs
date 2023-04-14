@@ -1,4 +1,7 @@
 namespace Livraison.Model;
+using Livraison.Model.CamionAggregate;
+using Livraison.Model.ChauffeurAggregate;
+using Livraison.Model.LotLivraisonAggregate;
 
 public class AssignateurLivraison
 {

@@ -1,5 +1,5 @@
 namespace Livraison.Tests.Model;
-using Livraison.Model;
+using Livraison.Model.CamionAggregate;
 
 public class CamionTest
 {
