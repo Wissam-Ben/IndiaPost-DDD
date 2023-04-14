@@ -15,7 +15,7 @@ public sealed class AssignerLotLivraison
 		Camion camion = _camions.TrouverParSecteur(lotLivraison.Secteur)
 			?? throw new CamionNonTrouve();
 
-		@string chauffeur = _chauffeurs.TrouverParSecteur(lotLivraison.Secteur)
+		Chauffeur chauffeur = _chauffeurs.TrouverParSecteur(lotLivraison.Secteur)
 		 ?? throw new ChauffeurNonTrouve();
 
 		chauffeur.AssignerLivraison(lotLivraison);

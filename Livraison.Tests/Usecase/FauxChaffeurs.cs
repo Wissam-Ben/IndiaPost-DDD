@@ -3,12 +3,12 @@ using Livraison.Model;
 
 public class FauxChauffeurs : Chauffeurs
 {
-	@string? Chauffeurs.TrouverParSecteur(string secteur)
+	Chauffeur? Chauffeurs.TrouverParSecteur(string secteur)
 	{
-		return new @string(secteur, new CreneauTravail(10, 18));
+		return new Chauffeur(secteur, new CreneauTravail(10, 18));
 	}
 
-	void Chauffeurs.Sauvegarder(@string chauffeur)
+	void Chauffeurs.Sauvegarder(Chauffeur chauffeur)
 	{
 
 	}

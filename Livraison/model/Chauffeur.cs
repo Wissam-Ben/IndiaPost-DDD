@@ -1,6 +1,6 @@
 namespace Livraison.Model;
 
-public class @string
+public class Chauffeur
 {
 	public string ChauffeurID { get; init; }
 
@@ -8,7 +8,7 @@ public class @string
 
 	public CreneauTravail HorairesTravail { get; init; }
 
-	public @string(string chauffeurID, CreneauTravail horairesTravail)
+	public Chauffeur(string chauffeurID, CreneauTravail horairesTravail)
 	{
 		(ChauffeurID, HorairesTravail) = (chauffeurID, horairesTravail);
 	}
