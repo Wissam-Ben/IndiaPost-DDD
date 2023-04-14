@@ -4,6 +4,7 @@ using Livraison.Model.LotLivraisonAggregate;
 public class FauxLotsLivraison : LotsLivraison
 {
 	private static string _secteur = "Île de France";
+
 	LotLivraison? LotsLivraison.FindById(string lotID)
 	{
 		return new LotLivraison(lotID, _secteur, new List<Colis>
@@ -16,5 +17,10 @@ public class FauxLotsLivraison : LotsLivraison
 			new Colis("colis1", 6, new Adresse("242 Rue Faubourg Saint-Antoine", _secteur)),
 			new Colis("colis2", 7, new Adresse("242 Rue Faubourg Saint-Antoine", _secteur))
 		}, new HoraireLivraison(11, 14));
+	}
+
+	public void Sauvegarder(LotLivraison lotLivraison)
+	{
+		
 	}
 }
