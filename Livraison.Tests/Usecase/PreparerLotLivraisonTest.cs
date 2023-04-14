@@ -10,20 +10,20 @@ public class PreparerLotLivraisonTest
 	[Fact]
 	public void preparerTest()
 	{
-		List<Colis> colis = new List<Colis>
+		var colis = new List<ColisDto>
 		{
-			new Colis("colis1", 1, new Adresse("242 Rue Faubourg Saint-Antoine", _secteur)),
-			new Colis("colis1", 2, new Adresse("242 Rue Faubourg Saint-Antoine", _secteur)),
-			new Colis("colis1", 3, new Adresse("242 Rue Faubourg Saint-Antoine", _secteur)),
-			new Colis("colis1", 4, new Adresse("242 Rue Faubourg Saint-Antoine", _secteur)),
-			new Colis("colis1", 5, new Adresse("242 Rue Faubourg Saint-Antoine", _secteur)),
-			new Colis("colis1", 6, new Adresse("242 Rue Faubourg Saint-Antoine", _secteur)),
-			new Colis("colis2", 7, new Adresse("242 Rue Faubourg Saint-Antoine", _secteur))
+			new ColisDto(_secteur, "242 Rue Faubourg Saint-Antoine", "colis1", 1),
+			new ColisDto(_secteur, "242 Rue Faubourg Saint-Antoine", "colis1", 2),
+			new ColisDto(_secteur, "242 Rue Faubourg Saint-Antoine", "colis1", 3),
+			new ColisDto(_secteur, "242 Rue Faubourg Saint-Antoine", "colis1", 4),
+			new ColisDto(_secteur, "242 Rue Faubourg Saint-Antoine", "colis1", 5),
+			new ColisDto(_secteur, "242 Rue Faubourg Saint-Antoine", "colis1", 6),
+			new ColisDto(_secteur, "242 Rue Faubourg Saint-Antoine", "colis2", 7)
 		};
-
+		var dto = new CreerLotLivraisonDto(colis, _secteur, 10, 13);
 		LotsLivraison lotsLivraison = new FauxLotsLivraison();
 		PreparerLotLivraison preparation = new PreparerLotLivraison(lotsLivraison);
-		LotLivraison lot = preparation.Preparer(colis, _secteur, 10, 13);
+		LotLivraison lot = preparation.Preparer(dto);
 
 		Assert.IsType<LotLivraison>(lot);
 	}

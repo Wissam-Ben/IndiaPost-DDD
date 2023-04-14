@@ -24,6 +24,11 @@ public sealed class LotLivraison
 		Colis.Add(colis);
 	}
 
+	public static LotLivraison Nouveau(string secteur, List<Colis> colis, HoraireLivraison plageLivraison)
+	{
+		return new LotLivraison(Guid.NewGuid().ToString(), secteur, colis, plageLivraison);
+	}
+
 	private void ColisDansLeMemeSecteur(List<Colis> colis)
 	{
 		colis.ForEach(c =>
@@ -34,8 +39,6 @@ public sealed class LotLivraison
 			}
 		}
 		);
-
-
 	}
 
 	private void QuantiteMinimaleColis(List<Colis> colis)
