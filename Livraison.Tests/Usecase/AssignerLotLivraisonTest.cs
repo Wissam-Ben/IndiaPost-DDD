@@ -20,7 +20,7 @@ public class AssignerLotLivraisonTest
 		Camion camionAssigne = assignement.assigner(_lot);
 
 		Assert.False(camionAssigne.EstDisponible);
-		Assert.NotNull(camionAssigne.Chauffeur);
+		Assert.NotNull(camionAssigne.ChauffeurID);
 		Assert.Equal(_lot.Secteur, camionAssigne.Secteur);
 	}
 }
